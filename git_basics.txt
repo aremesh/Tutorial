@@ -1,0 +1,306 @@
+1. git config --global user.name 'aremesh'
+2. git config --global user.email 'aremesh@gmail.com'
+3. Navigate to project folder by typing cd foldername
+4. git clone <<paste the url>> and hit enter 
+5. navigate it to the folder by cd <<project folder name>>
+6. USe git status to find the list of files added to the repository
+7. git log to see the status of the log.
+7.1 change the file
+7.1.1 git add .
+7.2 git commit -m ‘test message’
+8. git remote add origin <<url>>  -- it gives remote origin already exist
+9. git push -u origin master - to add the files to the repository 
+10. touch <<file name>>
+12. repeat 9
+13. git config --list -- to list down the properties and their nested properties
+
+git help <<verb>>
+git <<verb>> --help
+
+https://www.youtube.com/watch?v=73I5dRucCds
+Commands to know:
+git init
+git clone (url)
+git add (file names)
+git commit -m "(committed message)
+git remote add origin master (url)
+git push -u origin master
+git pull origin master
+
+
+Ramesh@aramesh MINGW64 ~
+$ git init
+Initialized empty Git repository in C:/Users/Ramesh/.git/
+
+Ramesh@aramesh MINGW64 ~ (master)
+$ git config --global user.name 'aremesh'
+
+Ramesh@aramesh MINGW64 ~ (master)
+$ git config --global user.email 'aremesh@gmail.com'
+
+Ramesh@aramesh MINGW64 ~ (master)
+$ cd c
+bash: cd: c: No such file or directory
+
+Ramesh@aramesh MINGW64 ~ (master)
+$ cd users
+bash: cd: users: No such file or directory
+
+Ramesh@aramesh MINGW64 ~ (master)
+$ cd desktop
+
+Ramesh@aramesh MINGW64 ~/desktop (master)
+$ cd c:/
+
+Ramesh@aramesh MINGW64 /c
+$ cd users
+
+Ramesh@aramesh MINGW64 /c/users
+$ cd projects
+bash: cd: projects: No such file or directory
+
+Ramesh@aramesh MINGW64 /c/users
+$ cd ramesh
+
+Ramesh@aramesh MINGW64 /c/users/ramesh (master)
+$ cd projects
+
+Ramesh@aramesh MINGW64 /c/users/ramesh/projects (master)
+$ git clone https://github.com/aremesh/Tutorial1.git
+Cloning into 'Tutorial1'...
+warning: You appear to have cloned an empty repository.
+
+Ramesh@aramesh MINGW64 /c/users/ramesh/projects (master)
+$ git log
+fatal: your current branch 'master' does not have any commits yet
+
+Ramesh@aramesh MINGW64 /c/users/ramesh/projects (master)
+$ git status
+On branch master
+
+Initial commit
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        ../.android/
+        ../.gitconfig
+        ../.ignition/
+        ../.node_repl_history
+        ../.oracle_jre_usage/
+        ../.ssh/
+        ../3D Objects/
+        ../AppData/
+        ../Contacts/
+        ../Desktop/
+        ../Documents/
+        ../Downloads/
+        ../Evernote/
+        ../Favorites/
+        ../GIT/
+        ../Google Drive/
+        ../IntelGraphicsProfiles/
+        ../Links/
+        ../Music/
+        ../NTUSER.DAT
+        ../NTUSER.DAT{738abf2e-88bc-11e6-8dcd-97bcaffa04a3}.TM.blf
+        ../NTUSER.DAT{738abf2e-88bc-11e6-8dcd-97bcaffa04a3}.TMContainer00000000000000000001.regtrans-ms
+        ../NTUSER.DAT{738abf2e-88bc-11e6-8dcd-97bcaffa04a3}.TMContainer00000000000000000002.regtrans-ms
+        ../Pictures/
+        ./
+        ../Saved Games/
+        ../Searches/
+        ../Source/
+        ../Tracing/
+        ../Videos/
+        ../a
+        ../coreinfo
+        ../coreinfo.exe
+        ../mediaenchx32.dll
+        ../mediaenchx321.dll
+        ../mediaenchx322.dll
+        ../mediaenchx323.dll
+        ../netsh
+        ../ntuser.dat.LOG1
+        ../ntuser.dat.LOG2
+        ../ntuser.ini
+        ../ntuser.pol
+        ../webphonecfgb.dat
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Ramesh@aramesh MINGW64 /c/users/ramesh/projects (master)
+$ cd tutorial1
+
+Ramesh@aramesh MINGW64 /c/users/ramesh/projects/tutorial1 (master)
+$ git statua
+git: 'statua' is not a git command. See 'git --help'.
+
+Did you mean this?
+        status
+
+Ramesh@aramesh MINGW64 /c/users/ramesh/projects/tutorial1 (master)
+$ git status
+On branch master
+
+Initial commit
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        amp.bmp
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Ramesh@aramesh MINGW64 /c/users/ramesh/projects/tutorial1 (master)
+$ git add
+Nothing specified, nothing added.
+Maybe you wanted to say 'git add .'?
+
+Ramesh@aramesh MINGW64 /c/users/ramesh/projects/tutorial1 (master)
+$ git add .
+
+Ramesh@aramesh MINGW64 /c/users/ramesh/projects/tutorial1 (master)
+$ git commit -m "a new image file has been added to the repository"
+[master (root-commit) ceb6c2e] a new image file has been added to the repository
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 amp.bmp
+
+Ramesh@aramesh MINGW64 /c/users/ramesh/projects/tutorial1 (master)
+$ git status
+On branch master
+Your branch is based on 'origin/master', but the upstream is gone.
+  (use "git branch --unset-upstream" to fixup)
+nothing to commit, working tree clean
+
+Ramesh@aramesh MINGW64 /c/users/ramesh/projects/tutorial1 (master)
+$ git remote add origin master https://github.com/aremesh/Tutorial1.git
+usage: git remote add [<options>] <name> <url>
+
+    -f, --fetch           fetch the remote branches
+    --tags                import all tags and associated objects when fetching
+                          or do not fetch any tag at all (--no-tags)
+    -t, --track <branch>  branch(es) to track
+    -m, --master <branch>
+                          master branch
+    --mirror[=<push|fetch>]
+                          set up remote as a mirror to push to or fetch from
+
+
+Ramesh@aramesh MINGW64 /c/users/ramesh/projects/tutorial1 (master)
+$ git remote add origin master https://github.com/aremesh/Tutorial1.git
+usage: git remote add [<options>] <name> <url>
+
+    -f, --fetch           fetch the remote branches
+    --tags                import all tags and associated objects when fetching
+                          or do not fetch any tag at all (--no-tags)
+    -t, --track <branch>  branch(es) to track
+    -m, --master <branch>
+                          master branch
+    --mirror[=<push|fetch>]
+                          set up remote as a mirror to push to or fetch from
+
+
+Ramesh@aramesh MINGW64 /c/users/ramesh/projects/tutorial1 (master)
+$ git log
+commit ceb6c2e4c71dabe16e5a806a932f57072c71ce33
+Author: aremesh <aremesh@gmail.com>
+Date:   Fri Apr 14 22:43:01 2017 -0400
+
+    a new image file has been added to the repository
+
+Ramesh@aramesh MINGW64 /c/users/ramesh/projects/tutorial1 (master)
+$ git status
+On branch master
+Your branch is based on 'origin/master', but the upstream is gone.
+  (use "git branch --unset-upstream" to fixup)
+nothing to commit, working tree clean
+
+Ramesh@aramesh MINGW64 /c/users/ramesh/projects/tutorial1 (master)
+$ git remote add origin https://github.com/aremesh/Tutorial1.git
+fatal: remote origin already exists.
+
+Ramesh@aramesh MINGW64 /c/users/ramesh/projects/tutorial1 (master)
+$ git push -u origin master
+Counting objects: 3, done.
+Writing objects: 100% (3/3), 226 bytes | 0 bytes/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/aremesh/Tutorial1.git
+ * [new branch]      master -> master
+Branch master set up to track remote branch master from origin.
+
+Ramesh@aramesh MINGW64 /c/users/ramesh/projects/tutorial1 (master)
+$ touch ht.html
+
+Ramesh@aramesh MINGW64 /c/users/ramesh/projects/tutorial1 (master)
+$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        ht.html
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Ramesh@aramesh MINGW64 /c/users/ramesh/projects/tutorial1 (master)
+$ git remote add origin https://github.com/aremesh/Tutorial1.git
+fatal: remote origin already exists.
+
+Ramesh@aramesh MINGW64 /c/users/ramesh/projects/tutorial1 (master)
+$ git commit -m "a new file has been added.."
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Untracked files:
+        ht.html
+
+nothing added to commit but untracked files present
+
+Ramesh@aramesh MINGW64 /c/users/ramesh/projects/tutorial1 (master)
+$ git remote add origin https://github.com/aremesh/Tutorial1.git
+fatal: remote origin already exists.
+
+Ramesh@aramesh MINGW64 /c/users/ramesh/projects/tutorial1 (master)
+$ git push -u origin master
+Branch master set up to track remote branch master from origin.
+Everything up-to-date
+
+Ramesh@aramesh MINGW64 /c/users/ramesh/projects/tutorial1 (master)
+$ git add .
+
+Ramesh@aramesh MINGW64 /c/users/ramesh/projects/tutorial1 (master)
+$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        new file:   ht.html
+
+
+Ramesh@aramesh MINGW64 /c/users/ramesh/projects/tutorial1 (master)
+$ git commit -m "new file added"
+[master 43fba23] new file added
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 ht.html
+
+Ramesh@aramesh MINGW64 /c/users/ramesh/projects/tutorial1 (master)
+$ git push -u origin master
+Counting objects: 2, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 238 bytes | 0 bytes/s, done.
+Total 2 (delta 0), reused 0 (delta 0)
+To https://github.com/aremesh/Tutorial1.git
+   ceb6c2e..43fba23  master -> master
+Branch master set up to track remote branch master from origin.
+
+Ramesh@aramesh MINGW64 /c/users/ramesh/projects/tutorial1 (master)
+$
+
+
+
+
+
+
+

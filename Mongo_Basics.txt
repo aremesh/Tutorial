@@ -1,0 +1,200 @@
+
+Mongo DB-
+ - No sql database 
+ - Easy sclaing database
+ 
+
+Install Mongo
+ -Install MongoDB 
+ -In bin directory set up the db path and log path
+ - Open Command Prom and navigate to this path
+ enter the below
+
+mongod --directoryperdb --dbpath "C:\MongoDB\bin\data\db" --logpath "C:\MongoDB\bin\log\mongo.log" --logappend --rest --install
+net start mongodb
+mongo
+
+create a database like below
+use mycustomers
+db
+
+
+For creating user for the code:
+db.createUser({
+	user:"ramesh",
+	pwd:"ramesh123",
+	roles:["readWrite","dbAdmin"]
+	
+});
+
+
+db.createCollection('customers');-- create a table
+db.customers.insert({first_name:"Ramesh",last_name:"Kumar"}); - insert into collectino
+db.customers.find().pretty() - list down the collection values
+
+
+db.customers.insert([{first_name:"John",last_name:"Smith"},{first_name:"Steven",last_name:"Smith"}]); - insert an array
+
+-- adding a new field 
+db.customers.insert([{first_name:"John",last_name:"Smith"},{first_name:"Steven",last_name:"Smith",gender:"Male"}]);
+					<match>	- always the first parameter is match
+db.customers.update({first_name:"John"},{first_name:"joe",last_name:"smith",gender:"Male"})  -- update the record with the matching firstname. always first argument would be matching column and rest would be updaing fields
+-- to add only the gender
+db.customers.update({first_name:"Ramesh"},{$set:{gender:"Male"}}) - Adding new column. here we are adding only the gender not fistname and lastname 
+
+db.customers.update({first_name:"Ramesh"},{$set:{Age:31}}) 
+
+db.customers.update({first_name:"Ramesh"},{$inc:{Age:2}}) --$inc - to add increment 
+db.customers.update({first_name:"Ramesh"},{$unset:{Age:2}}) --$inc - to remove the column from the table
+db.customers.update({first_name:"Ramesh1"},{first_name:"Ramesh",last_name:"tester"}) --$inc - to see with the unmatched
+db.customers.update({first_name:"Ramesh1"},{first_name:"Ramesh",last_name:"tester"},{upsert:true}) --If unmatched, upsert is to add the value if its key isnot matched
+db.customers.update({first_name:"joe"},{$rename:{"gender":"sex"})
+
+db.customers.remove({first_name:"joe"}) to remove the record
+db.customers.remove({first_name:"joe"}) to remove the record
+
+
+
+
+
+
+//
+
+db.customers.insert([
+{
+		first_name:"Ramesh",
+		last_name:"Test",
+		gender:"Male",
+		age:32,
+		address:{street:"29 B robbls",City:"Rocky Hill",St:"ct"},
+		memberships:["mem1","mem2"],
+		balance:123
+},
+{
+		first_name:"Steven",
+		last_name:"Test",
+		gender:"Male",
+		age:32,
+		address:{street:"29 B robbls",City:"Rocky Hill",St:"ct"},
+		memberships:["mem1","mem2"],
+		balance:123
+},
+{
+		first_name:"Smith",
+		last_name:"Test",
+		gender:"Male",
+		age:32,
+		address:{street:"29 B robbls",City:"Rocky Hill",St:"ct"},
+		memberships:["mem1","mem2"],
+		balance:123
+},
+{
+		first_name:"Joe",
+		last_name:"Test",
+		gender:"Male",
+		age:32,
+		address:{street:"29 B robbls",City:"Rocky Hill",St:"ct"},
+		memberships:["mem1","mem2"],
+		balance:123
+},
+{
+		first_name:"Jim",
+		last_name:"Test",
+		gender:"Male",
+		age:32,
+		address:{street:"29 B robbls",City:"Rocky Hill",St:"ct"},
+		memberships:["mem1","mem2"],
+		balance:123
+},
+{
+		first_name:"TOM",
+		last_name:"Test",
+		gender:"Male",
+		age:32,
+		address:{street:"29 B robbls",City:"Rocky Hill",St:"ct"},
+		memberships:["mem1","mem2"],
+		balance:123
+}
+
+]
+)
+
+
+
+
+db.customers.find({first_name:"TOM"})
+db.customers.find({$or:[{first_name:"TOM"},{first_name:"Jim"}]}).pretty() - usage of OR operator
+db.customers.find({$or:[{first_name:"TOM"},{gender:"Male"}]}).pretty() 
+db.customers.find({$and:[{first_name:"TOM"},{gender:"Male"}]}).pretty() -usage of AND operator
+db.customers.find({age:{$gt:30}}).pretty()
+gte- greater than or equal to 
+lte- less than or equal to 
+
+
+db.customers.find({"address.City":"Rocky Hill"}).pretty() - inner most document search
+db.customers.find({memberships:"mem1"}).pretty()
+
+
+
+db.customers.find({memberships:"mem1"}).sort({last_name:1}) \\desc
+db.customers.find({memberships:"mem1"}).sort({last_name:-1}) \\asc
+db.customers.find({memberships:"mem1"}).count()
+db.customers.find({memberships:"mem1"}).limit(4)
+db.customers.find().forEach(function(doc){print("Customer Name :"+doc.first_name)})
+
+
+
+
+
+
+db.createCollection("comments")                                                                                            
+db.comments.insert([{uid:123,pid:44,comment:"blah"},{uid:234,pid:444,comment:"Its good"},{uid:567,pid:543,comment:"Left Join testing"}]);    
+db.createCollection("users") 
+db.users.insert([{uid:123,name:"Ramesh"},{uid:234,name:"Gowmiya"}]) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{
+first_name:"Ramesh",
+last_name:"kumar",
+memberships:["mem1","mem2"],
+	address:{
+		street:"main street",
+		city:"hartford"
+	},
+	contacts:[
+		{name:"Brad",relationship:"friend"},
+		{name:"kumar",relationship:"friend1"},
+	]
+	
+}
