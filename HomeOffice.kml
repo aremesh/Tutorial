@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Basics</name>
+    <description/>
+    <Style id="icon-seq-0-0-labelson-nodesc">
+      <IconStyle>
+        <scale>1.1</scale>
+        <Icon>
+          <href><![CDATA[http://chart.googleapis.com/chart?chst=d_map_pin_letter&chld=A|FF0000|000000]]></href>
+        </Icon>
+        <hotSpot x="16" xunits="pixels" y="32" yunits="insetPixels"/>
+      </IconStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <Style id="icon-seq-0-1-labelson-nodesc">
+      <IconStyle>
+        <scale>1.1</scale>
+        <Icon>
+          <href><![CDATA[http://chart.googleapis.com/chart?chst=d_map_pin_letter&chld=B|EEFF00|000000]]></href>
+        </Icon>
+        <hotSpot x="16" xunits="pixels" y="32" yunits="insetPixels"/>
+      </IconStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <Style id="icon-seq-0-2-labelson-nodesc">
+      <IconStyle>
+        <scale>1.1</scale>
+        <Icon>
+          <href><![CDATA[http://chart.googleapis.com/chart?chst=d_map_pin_letter&chld=C|00FF22|000000]]></href>
+        </Icon>
+        <hotSpot x="16" xunits="pixels" y="32" yunits="insetPixels"/>
+      </IconStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <Style id="icon-seq-0-3-labelson-nodesc">
+      <IconStyle>
+        <scale>1.1</scale>
+        <Icon>
+          <href><![CDATA[http://chart.googleapis.com/chart?chst=d_map_pin_letter&chld=D|00CCFF|000000]]></href>
+        </Icon>
+        <hotSpot x="16" xunits="pixels" y="32" yunits="insetPixels"/>
+      </IconStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <Folder>
+      <name>Home US</name>
+      <Placemark>
+        <name>Home</name>
+        <styleUrl>#icon-seq-0-0-labelson-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -72.6469523,41.6769885,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Office</name>
+        <styleUrl>#icon-seq-0-1-labelson-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -72.5950654,41.7167932,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>West Farms Mall</name>
+        <styleUrl>#icon-seq-0-2-labelson-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -72.761258,41.725284,0
+          </coordinates>
+        </Point>
+      </Placemark>
+      <Placemark>
+        <name>Crystal Mall</name>
+        <styleUrl>#icon-seq-0-3-labelson-nodesc</styleUrl>
+        <Point>
+          <coordinates>
+            -72.143988,41.3745998,0
+          </coordinates>
+        </Point>
+      </Placemark>
+    </Folder>
+  </Document>
+</kml>
